@@ -4,11 +4,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
-
+		<!-- Edit me start! -->
+		<title>Reconceptualizing neural function as high-dimensional brain state dynamics</title>
+		<meta name="description" content=" Reconceptualizing neural function as high-dimensional brain state dynamics ">
+		<meta name="author" content=" Adina Wagner ">
+		<!-- Edit me end! -->
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/beige.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,7 +19,525 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
+
+
+<section>
+<h2>Reconceptualizing neural function as high-dimensional brain state dynamics</h2>
+
+  <div style="margin-top:1em;text-align:center">
+  <table style="border: none;">
+  <tr>
+	<td style="border: none;">Adina Wagner, M.Sc.
+	  <br><small>
+		<a href="https://mas.to/@adswa" target="_blank">
+		  <img data-src="pics/mastodon.svg" style="height:30px;margin:0px" />
+		  mas.to/@adswa</a></small></td>
+    <td style="border: none;">
+	  <br></td>
+  </tr>
+  <tr>
+    <td style="border: none; vertical-align:top">
+        <small><a href="https://www.psychologie.hhu.de/" target="_blank">Institute for Experimental Psychology</a>,
+                <br>HHU Düsseldorf<br><br></small><br>
+        <small><a href="http://psychoinformatics.de" target="_blank">Psychoinformatics lab</a>,
+          <br> Institute of Neuroscience and
+          Medicine, Brain &amp; Behavior (INM-7)<br>
+       Research Center Jülich</small><br>
+    </td>
+      <td>
+          <img style="height:70px;margin-right:10px;vertical-align:top" data-src="pics/hhu_logo.svg" /><br>
+          <img style="height:100px;margin-right:10px" data-src="pics/fzj_logo.svg" /></td>
+  </tr>
+  </table>
+  </div>
+</section>
+
+<section>
+<section>
+    <h3 class="fragment" data-fragment-index="3">Delayed Decision Making</h3>
+    <table>
+        <tr>
+            <td style="vertical-align:top">
+                <img class="fragment fade-in-then-semi-out" data-fragment-index="1" src="pics/calendar1.svg" height="150px">
+            </td>
+            <td style="vertical-align:top">
+                <div class="r-stack">
+                    <img class="fragment fade-in-then-semi-out" data-fragment-index="1" height="450px" src="pics/floorplan_1.png">
+                </div>
+            </td>
+            <td style="vertical-align:top">
+                <div class="r-stack">
+                    <img class="fragment  fade-in-then-semi-out" data-fragment-index="2" height="500px" src="pics/floorplan_2.png">
+                    <img class="fragment" data-fragment-index="3" src="pics/square.png" height="500px">
+                </div>
+            </td>
+            <td style="vertical-align:top">
+                <img class="fragment fade-in-then-semi-out" data-fragment-index="2" src="pics/calendar2.svg" height="150px">
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section data-transition="None">
+    <h2>Mental representations</h2>
+        <p> <span class="fragment fade-in" data-fragment-index="1"><b>Dynamic </b></span><span>population codes represent working memory content</span></p>
+    <div class="r-stack">
+        <img class="fragment fade-out" data-fragment-index="1" src="pics/dynamic_coding_-1.svg" width="900px">
+        <img class="fragment fade-in-then-out" data-fragment-index="1" src="pics/dynamic_coding_0.png" width="900px">
+        <img class="fragment fade-in-then-out" data-fragment-index="2" src="pics/dynamic_coding.png" width="900px">
+        <img class="fragment fade-in-then-out" data-fragment-index="3"  src="pics/neural_trajectories_redone.png" width="900px">
+    </div>
+
+    <div class="r-stack" style="text-align:right">
+        <p style="text-align:right" class="fragment fade-in-then-out" data-fragment-index="0"><small>
+            (adapted from <a href="https://journals.physiology.org/doi/full/10.1152/jn.00225.2018" target="_blank">
+            Meyers, 2018</a>)
+        </small></p>
+        <p style="text-align:right" class="fragment fade-in-then-out" data-fragment-index="1"><small>
+            (adapted from
+            <a href="https://journals.physiology.org/doi/full/10.1152/jn.00225.2018" target="_blank">
+            Meyers, 2018</a>)
+        </small></p>
+        <p style="text-align:right" class="fragment fade-in-then-out" data-fragment-index="2"><small>
+            (adapted from
+            <a href="https://journals.physiology.org/doi/full/10.1152/jn.00225.2018" target="_blank">
+            Meyers, 2018</a>)
+        </small></p>
+    </div>
+
+    <p class="fragment fade-in" data-fragment-index="2">
+    This can be reconceptualized as trajectories in a high-dimensional space.</p>
+    <p class="fragment fade-in" data-fragment-index="3">
+    Investigating these trajectories during decision making might reveal underlying brain states and their transitions.</p>
+</section>
+
+
+<section data-transition="None">
+    <h2>Project outline</h2>
+                    <dd>We can model brain activity in an n-dimensional space,
+                    where n is the number of measurements (e.g., voxels/sensors/electrodes).</dd>
+    <img src="pics/functional_atlas_concept.svg" height="250px">
+            <dl>
+                <dt class="fragment fade-in" data-fragment-index="1">Assumption:</dt>
+                <dd class="fragment fade-in" data-fragment-index="1">When the same event is experienced,
+                    exact brain activity may differ anatomically, but should
+                    correspond to similar cognitive processes.</dd>
+                <dt class="fragment fade-in" data-fragment-index="2">Idea:</dt>
+                <dd class="fragment fade-in" data-fragment-index="2">To functionally align different brain activity,
+                    we align the vector representations of the signals.
+                </dd>
+                <dt class="fragment fade-in" data-fragment-index="3">Aim:</dt>
+                <dd class="fragment fade-in" data-fragment-index="3">Assign meaning to the axis of the shared space.
+                </dd>
+            </dl>
+</section>
+
+</section>
+
+<section>
+    <section>
+        <h2>Study and data overview</h2>
+        <table>
+            <tr>
+                <td style="vertical-align:middle; font-size:35px">
+                    <ul>
+                        <li>Acquired 2016/17 at OVGU Magdeburg by Kaiser et al.</li>
+                        <li>22 participants</li>
+                        <li>510 trials of a delayed decision making task</li>
+                        <li>9 pre-learned magnitude-probability combinations</li>
+                        <li>MEG acquisition on Elekta Neuromag System (306 channels)</li>
+                    </ul>
+                </td>
+                <td>
+                    <img src="pics/memento_experiment.svg">
+                </td>
+            </tr>
+        </table>
+
+    </section>
+
+    <section data-transition="None">
+        <h2>The Shared response model (SRM)</h2>
+        <div class="r-stack">
+            <p style="font-size:30px" class="fragment fade-out" data-fragment-index="3">
+                Each recording's $i$'s data is a matrix of dimensions <b>sensors</b> $\times$ <b>time-points</b> $X_i$.<br>
+                SRM (<a href="https://proceedings.neurips.cc/paper_files/paper/2015/file/b3967a0e938dc2a6340e258630febd5a-Paper.pdf" target="_blank">Chen et al., 2015</a>)
+                models neural responses as a recording-specific base $W_i$ <br>
+                and shared components over all recordings' responses $S$.
+            </p>
+            <p style="font-size: 30px" class="fragment fade-in" data-fragment-index="3">
+                <strong>SRM identifies common activity patterns across recordings (e.g., participants), and provides a <br>method
+                    to transform activity into a lower-dimensional shared latent component space.</strong>
+            </p>
+        </div>
+        <p style="font-size:25px">
+            \[\begin{aligned}
+    min_{w_i, s}\sum_i{\|X_i - W_iS \|}^2_F \\
+    s.t. W^T_iW_i = I_k
+    \end{aligned} \]
+        </p>
+        <div class="r-stack">
+            <img class="fragment fade-out" data-fragment-index="1" src="pics/srm_basics_3.png" height="600px">
+            <img class="fragment fade-in" data-fragment-index="1" src="pics/srm_basics_3_filled.png" height="600px">
+        </div>
+    </section>
+
+
+<section data-transition="None">
+    <h2>SRM Simulation</h2>
+    <table style="font-size:30px">
+        <tr style="border-style:hidden;">
+            <td class="fragment" data-fragment-index="1">
+                Generate a ground-truth <br>
+                signal and 306 "sensors" <br>
+                of pure noise.
+            </td>
+            <td  class="fragment" data-fragment-index="2">
+                For a proportion of sensors,<br>
+                <strong>weight the signal</strong> (random <br>
+                weight [0, 1]) and add it.<br>
+            </td>
+            <td class="fragment" data-fragment-index="3">
+                Repeat to generate<br>
+                artificial time series <br>
+                for $N$ recordings.
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                </td>
+        </tr>
+    </table>
+                <div class="r-stack">
+                    <img class="fragment fade-in-then-out" data-fragment-index="1" src="pics/sim_artificial-signal.png" width="450px">
+                    <img class="fragment fade-in-then-out" data-fragment-index="2" src="pics/sim_artificial-signal-noisy-3.png" width="450" >
+                    <img class="fragment fade-in-then-out" data-fragment-index="4" src="pics/sim_successful_recovery_no_offset.png" width="450px">
+                    <img class="fragment fade-in-then-out" data-fragment-index="5" src="pics/sim_successful_weight_recovery_no_offset.png" width="450px">
+                    <img class="fragment fade-in" data-fragment-index="6" src="pics/sim_successful_recovery_no_offset_transformed.png" width="450px">
+                </div>
+
+    <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in"  data-fragment-index="4">
+        A shared response model fit on this data can recover the hidden signal
+        well: <br>
+    </p>
+    <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in-then-semi-out" data-fragment-index="4">
+        <strong>The shared components contain the signal</strong>.
+    </p>
+    <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in-then-semi-out" data-fragment-index="5">
+         <strong>The weights used in subject-specific signal generation show a <br>
+             high correlation to the subject-specific transformation bases.</strong>
+    </p>
+    <p style="font-size:30px;margin-top:-15px;margin-bottom:-30px" class="fragment fade-in-then-semi-out" data-fragment-index="6">
+         <strong>Transforming raw signal into the shared space yields <br>
+             consistent components resembling the signal.</strong>
+    </p>
+</section>
+
+
+<section data-transition="None">
+    <h2>SRM Simulation</h2>
+    <table style="font-size:30px">
+        <tr style="border-style:hidden;">
+            <td>
+                With random offset in subjects...
+            </td>
+        </tr>
+    </table>
+
+        <div class="r-stack">
+             <img src="pics/sim_artificial-signal-offset-0.png" width="450px">
+             <img class="fragment fade-in" data-fragment-index="1" src="pics/sim_artificial-signal-offset-1.png" width="450px">
+             <img class="fragment fade-in" data-fragment-index="2" src="pics/sim_artificial-signal-offset-2.png" width="450px">
+             <img class="fragment fade-in-then-out" data-fragment-index="3" src="pics/sim_unsuccessful_recovery_offset.png" width="450px">
+             <img class="fragment fade-in-then-out" data-fragment-index="4" src="pics/sim_unsuccessful_weight_recovery_offset.png" width="450px">
+             <img class="fragment fade-in" data-fragment-index="5" src="pics/sim_unsuccessful_recovery_offset_transformed-0.png" width="510" >
+             <img class="fragment fade-in" data-fragment-index="6" src="pics/sim_unsuccessful_recovery_offset_transformed-2.png" width="510" >
+             <img class="fragment fade-in" data-fragment-index="7" src="pics/sim_unsuccessful_recovery_offset_transformed-3.png" width="510" >
+        </div>
+        <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in"  data-fragment-index="3">
+        ...the signal recovery is impeded: <br>
+    </p>
+        <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in-then-semi-out" data-fragment-index="3">
+            <strong>Components capture mixed and partial signals</strong>.
+        </p>
+        <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in-then-semi-out" data-fragment-index="4">
+            <strong>There is overall no clear relationship between model weights and ground truth</strong>.
+        </p>
+        <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in" data-fragment-index="5">
+            <strong>Across subjects, different components capture the signal</strong>.
+        </p>
+        <br><br>
+        <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in" data-fragment-index="6">
+            <strong>This would impede a consistent interpretation of latent factors</strong>.
+        </p>
+</section>
+
+    <section data-transition="None">
+        <h2>A spectral variant of the SRM</h2>
+        <p style="font-size:35px">
+            Transforming data into a <strong>power spectrum</strong>
+            prior to SRM removes timing offsets.</p>
+        <p style="font-size:35px;margin-top:-15px;" class="fragment fade-in"  data-fragment-index="2">
+            Subject bases can then transform unseen time-resolved data <br>
+            into a <b>time-resolved shared space</b>.
+        </p>
+        <div class="r-stack">
+            <img data-fragment-index="1" class="fragment fade-out" src="pics/spectral_srm_basics_1.svg" height="150px">
+            <img class="fragment fade-in-then-out" data-fragment-index="1" src="pics/sim_successful_weight_recovery_offset.png" width="550" >
+            <img class="fragment fade-in-then-out" data-fragment-index="2" src="pics/spectral_srm_basics_2.svg" height="150px">
+            <img class="fragment fade-in" data-fragment-index="3" src="pics/sim_successful_recovery_offset_transformed-3.png" width="510" height="350px">
+            <img class="fragment fade-in" data-fragment-index="4" src="pics/sim_successful_recovery_offset_transformed-2.png" width="510" height="350px">
+            <img class="fragment fade-in" data-fragment-index="5" src="pics/sim_successful_recovery_offset_transformed-1.png" width="510" height="350px">
+        </div>
+        <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in"  data-fragment-index="1">
+            <strong>Model weights recover the signal weights consistently </strong>
+        </p>
+        <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in"  data-fragment-index="3">
+            <strong>These transformations consistently reconstruct the signal in the same components</strong>
+        </p>
+    </section>
+</section>
+
+<section>
+<section data-transition="None">
+    <h2>Trustworthy research relies on data management</h2>
+    <img class="fragment fade-out" src="pics/frontend_vs_backend_paper.png" height="400">
+    <imgcredit> adapted from https://dribbble.com/shots/3090048-Front-end-vs-Back-end</imgcredit>
+</section>
+
+<section data-transition="None">
+    <h2>Research software for Research data management</h2>
+    datalad logo <br>
+    CITE Halchenko et al.
+</section>
+
+<section data-transition="None">
+    <h2>Research Data Management: Conceptual work</h2>
+    <table style="font-size:35px">
+        <tr style="border-style:hidden;">
+            <td class="fragment" data-fragment-index="1" style="text-align:left">
+                "Research Objects" <br>
+                (<a href="https://www.nature.com/articles/npre.2010.4626.1.pdf" target="_blank">Bechhofer et al., 2010</a>)
+            </td>
+            <td class="fragment" data-fragment-index="3">
+                DataLad Dataset
+            </td>
+            <td class="fragment" data-fragment-index="2" style="text-align:right">
+                "<b>FAIR</b> digital objects"<br>
+                (<a href="http://dx.doi.org/10.3390/publications8020021" target="_blank">De Smedt et al., 2020</a>)
+            </td>
+        </tr>
+        <tr style="border-style:hidden;">
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td class="fragment" data-fragment-index="1" style="font-size:30px;text-align:left">
+                "The goal of Research Objects is to<br>
+                create a class of artefacts that can<br>
+                encapsulate our digital knowledge<br>
+                and provide a mechanism for sharing<br>
+                and discovering assets of reuseable <br>
+                research and scientific knowledge."
+            </td>
+            <td class="fragment" data-fragment-index="3" style="vertical-align:middle; text-align:center">
+                <img src="pics/dataset.svg" height="150px">
+            </td>
+            <td style="font-size:30px;text-align:right" class="fragment" data-fragment-index="2">
+                "A stable actionable unit that <br>
+                bundles sufficient information<br>
+                to allow reliable interpretation <br>
+                and processing of contained data.<br>
+                PIDs and metadata of FDOs are <br>
+                open; access to FDO content may <br>
+                be subject to authentication"
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <p style="text-align:right">
+    <small><a style="text-align:right" href="https://doi.org/10.7490/f1000research.1118575.1" target="_blank">Wagner et al., 2021</a></small></p>
+</section>
+
+
+<section data-transition="None">
+    <h2>Research Data Management: Conceptual work</h2>
+        <div class="r-stack">
+        <p class="fragment fade-out" data-fragment-index="1">Exhaustively <b>V</b>ersioned</p>
+        <p class="fragment fade-in-then-out" data-fragment-index="1"><b>A</b>ctionable Metadata</p>
+        <p class="fragment fade-in-then-out" data-fragment-index="2"><b>M</b>odular structures for reuse</p>
+        <p class="fragment fade-in-then-out" data-fragment-index="3"><b>P</b>ortable, self-contained units</p>
+        <p class="fragment fade-in" data-fragment-index="4"><b>Reusable</b></p>
+    </div>
+    <div class="r-stack">
+        <img class="fragment fade-out" data-fragment-index="1" src="pics/vamp_0_start.png">
+        <img class="fragment fade-in-then-out" data-fragment-index="1" src="pics/vamp_1_provcapture.png">
+        <img class="fragment fade-in-then-out" data-fragment-index="2" src="pics/vamp_2_pushtocloud.png">
+        <img class="fragment fade-in-then-out" data-fragment-index="3" src="pics/vamp_3_reproduce.png">
+        <img class="fragment fade-in-then-out" data-fragment-index="4" src="pics/vamp_4_reuse.png">
+    </div>
+    <p style="text-align:right"><small><a style="text-align:right" href="https://doi.org/10.7490/f1000research.1118575.1" target="_blank">Wagner et al., 2021</a></small></p>
+</section>
+
+
+<section>
+    <h2>Research Data Management: Technical solutions</h2>
+    <div class="r-stack">
+        <img class="fragment fade-out" data-fragment-index="1" src="pics/fairlybig_workflow.png" style="margin-top:-35px;margin-bottom:-30px">
+        <img class="fragment fade-in" data-fragment-index="1" src="pics/fairlybig_ukbsetup.png" style="margin-top:-35px;margin-bottom:-30px">
+    </div>
+    <p style="text-align:right"><small><a style="text-align:right" href="https://www.nature.com/articles/s41597-022-01163-2" target="_blank">Wagner et al., 2022</a></small></p>
+    <table style="font-size:30px; margin-top:-35px;margin-bottom:-30px">
+        <tr>
+            <td>
+                <ul>
+                    <li>Scalable framework for large-scale processing</li>
+                    <li>Exhaustively tracks & links analysis dependencies (opt. compressed, encrypted)</li>
+                    <li>Integrates with standard high throughout computing workflow managers</li>
+                    <li>Can yield (computationally) reproducible results, suitable for individual recomputation on consumer hardware, as fully portable units</li>
+                    <li>Adapted into third-party processing frameworks (CITE BABS)</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Research data management: Education</h2>
+    <table >
+        <tr style="border-style:hidden;">
+            <td><img src="pics/handbook.png" height="300px"></td>
+            <td style="vertical-align:top;font-size:37px"><ul>
+                <li>Online RDM handbook, <br>
+                    continuously developed <br> since 2019; ~60 contributors</li>
+                <li>RDM trainings and<br> workshops
+                    since 2020</li>
+                <li>Print edition of RDM <br>
+                    handbook released 2023</li>
+            </ul></td>
+        </tr>
+        <tr style="font-size:37px" class="fragment">
+            <td>Measurable impact on <br>
+                software popularity
+                <img src="pics/popcon.png" height="400px"></td>
+            <td>~3 times higher web traffic <br>
+                than technical documentation
+                <img src="pics/rtd.png" height="400px"></td>
+        </tr>
+    </table>
+</section>
+</section>
+
+
+
+<section>
+
+</section>
+
+
+</section>
+
+<section>
+
+    <section>
+        <h2>Conclusion</h2>
+    </section>
+<section>
+    <h2>Thanks ♥️ </h2>
+    <table style="font-size:30px">
+        <tr>
+            <td>
+                Gerhard Jocham <br>
+                Jan Hirschmann<br>
+                My thesis commission <br><br>
+                <b>The Coco Lab</b><br>
+                Luca,
+                Antonia,
+                Mani, <br>
+                Hannah,
+                Christiane <br>
+                Monja,
+                Eduard,
+                Lina <br>
+                Anna, Armin
+            </td>
+            <td><b>The PsyInf people</b><br>
+                Michael,
+                Laura, <br>
+                Alex,
+                Michał, <br>
+                Stephan,
+                Tosca <br>
+                Christian,
+                Olaf, <br>
+                Gosia,
+                Manu <br><br>
+                Yarik + family, JB, <br>
+                Camille, Cass, V, <br>
+                Ljerka, Daniela
+
+            </td>
+            <td><b>The INM-7</b><br>
+                Simon Eickhoff <br><br>
+                My parents, <br>
+                Alexander, Michelle, <br>
+                Svea, Thorge, Merle,<br>
+                Fynn, Oma & Opa, <br>
+                my parents-in-law, <br>
+                Lotti, Iggy, Matti
+            </td>
+        </tr>
+    </table><br>
+     <p style="font-size:30px">
+Free and open source software, and the people behind it<br>
+                The open science movement <br><br>
+   <b>Für Oma(†)</b></p>
+</section>
+
+<section>
+    <h1>Questions</h1>
+</section>
+</section>
+
+<!--------- ----------->
+<section>
+    <section>
+        <h2>Experimental Stimuli</h2>
+        <img height="900px" src="pics/memento-stimuli.png">
+    </section>
+</section>
+
+
+<section>
+        <table style="font-size:35px"  align="center">
+        <tr style="border-bottom: none !important">
+            <td>
+            <div class="r-stack">
+            <img class="fragment" data-fragment-index="1" src="pics/stimulus1.png" >
+            <img class="fragment" data-fragment-index="2" src="pics/stimulus2.png" >
+            <img class="fragment" data-fragment-index="3" src="pics/stimulus3.png" >
+            <img class="fragment" data-fragment-index="4" src="pics/stimulus4.png" >
+            <img class="fragment" data-fragment-index="5" src="pics/stimulus5.png" >
+            </div>
+            </td>
+            <td style="vertical-align:middle">
+                <div class="r-stack">
+            <p class="fragment fade-in-then-out" data-fragment-index="1">Fixation cross</p>
+            <p class="fragment fade-in-then-out" data-fragment-index="2">First option (0.7s)<br><br>
+                <small>number of stripes: reward <strong>magnitude</strong> <br>
+                    angle of stripes: reward <strong>probability</strong></small></p>
+            <p class="fragment fade-in-then-out" data-fragment-index="3">Delay (2s)</p>
+            <p class="fragment fade-in-then-out" data-fragment-index="4">Second option (0.7s)</p>
+            <p class="fragment fade-in-then-out" data-fragment-index="5">Decision and Feedback<br><br>
+                <small>left or right button press</small></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</section>
+
+
 				<section>Slide 2</section>
 			</div>
 		</div>
@@ -25,15 +546,41 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1280,
+				height: 960,
+				// Factor of the display size that should remain empty around the content
+				margin: 0.1,
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 1.5,
 
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: 'c',
+				pdfSeparateFragments: false,
+				pdfMaxPagesPerSlide: 1,
+				pdfPageHeightOffset: -1,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom,
+				math: {
+                  mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+                  config: 'TeX-AMS_HTML-full',
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                  },
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
 			});
 		</script>
 	</body>
