@@ -432,14 +432,174 @@
 
 
 <section>
+    <section>
+        <table>
+            <tr>
+                <td style="font-size:30px">
+                    <ul>
+                        <b>Data wrangling</b>
+                        <li>Raw data organized<br>
+                            to BIDS Standard</li>
+                        <li>Preprocessed raw data</li>
+                        <b>Analyses:</b>
+                        <li>Behavioral Analysis</li>
+                        <li>SRM analysis</li>
+                        <li>Temporal decoding analysis</li>
+                        <li>Temporal generalization analysis</li>
+                    </ul>
 
-</section>
+                </td>
+                <td>
+                    <img src="pics/analysis_setup.png">
+                </td>
+            </tr>
+        </table>
+    </section>
 
+    <section data-transition="None">
+        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #888888;margin-top:700px;margin-bottom:0px;margin-left:1050px">
+        <img src="pics/analysis_setup_srm.svg">
+        </p>
+        <p class="fragment fade-in-then-semi-out" data-fragment-index="0" style="font-size:30px">The shared space contains information about some trial properties, <br>
+            e.g., motor response or left vs. right visual stimulation.</p>
+        <div class="r-stack">
+            <img height="650" class="fragment fade-out" data-fragment-index="1" src="pics/avg-signal_shared-shape_spectral-srm_5-feat_per-comp_response-locked_leftvsright.png">
+            <img height="650" class="fragment fade-in" data-fragment-index="1" src="pics/trialtype-probability_avg-signal_shared-shape_spectral-srm_5-feat_per-comp_delay.png">
+        </div>
+        <p class="fragment fade-in-then-semi-out" data-fragment-index="1" style="font-size:30px">
+            But no direct mapping to stimulus properties during the delay.</p>
+    </section>
+
+    <section data-transition="None">
+        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #888888;margin-top:700px;margin-bottom:0px;margin-left:1050px">
+        <img src="pics/analysis_setup_decoding.svg">
+        </p>
+        <table>
+            <tr style="border-bottom: none !important">
+                <td style="font-size:30px;vertical-align:top">
+                    <ul>
+                        <b>Temporal decoding of stimulus
+                        properties in the delay:</b>
+                        <li>Custom cross-validated temporal decoding pipeline
+                            (L2 regularized logistic regression), with
+                            3 dimensionality reduction transformers:
+                            <b>SRM</b>, <b>spectral SRM</b>, <b>PCA</b></li>
+                        <li>Hyperparameter tuning (GridSearch on unused trial data)</li>
+                    </ul>
+                </td>
+                <td style="vertical-align:bottom">
+                    <div class="r-stack">
+                        <embed class="fragment fade-in-then-out" data-fragment-index="1" type="text/html" src="pics/pipeline.html" width="450" height="350">
+                        <embed class="fragment fade-in-then-out" data-fragment-index="2" type="text/html" src="pics/srmpipeline.html" width="450" height="350">
+                        <embed class="fragment fade-in-then-out" data-fragment-index="3"  type="text/html" src="pics/spectralsrmpipeline.html" width="450" height="350">
+                        <embed class="fragment fade-in" data-fragment-index="4" type="text/html" src="pics/pcapipeline.html" width="450" height="350">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table class="fragment" data-fragment-index="5">
+            <tr style="border-bottom: none !important">
+                <td style="text-align:center;vertical-align:top">
+                    <small>Decoding reward probability of option 1</small>
+                    <div class="r-stack">
+
+                        <img height="350px" src="pics/averaged-decoding_balanced-accuracy_l2logreg_probability_dimreduction-None.png">
+                    </div>
+                </td>
+                <td style="font-size:30px">
+                    <ul>
+                        <li>Plain temporal decoding, & decoding <br>
+                            with dimensionality reduction <br>
+                            methods find
+                            <b>no stable decoding in the delay</b>.
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-transition="None">
+        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #888888;margin-top:700px;margin-bottom:0px;margin-left:1050px">
+        <img src="pics/analysis_setup_generalization.svg">
+        </p>
+        <table style="border-bottom: none !important;table-layout:fixed" width="1400px">
+            <tr style="border-bottom: none !important">
+                <td style="border-bottom: none !important;font-size:30px;vertical-align:top">
+                    <ul>
+                    <b>Temporal generalization analysis</b>
+                        <li>Assess temporal generalization of decision<br>
+                            representations based on trial characteristics.
+                        </li>
+                        <li>Permutation test (N=10000) to find above <br>
+                            chance decoding accuracy.</li>
+                        <li>Within subject analyses, aggregated to group level.<br>
+                            </li>
+
+                    </ul>
+                </td>
+                <td style="border-bottom: none !important;font-size:30px;vertical-align:top">
+                    <ul>
+                        <li><b>Training</b>: Response-centered data. Labels<br>
+                            according to 1) actual choice, 2) choice derived<br>
+                            derived from first option's properties, 3) choice<br>
+                            derived according to subject-specific property weights<br>
+                        </li>
+                        <li><b>Testing</b>: Data during stimulus presentation and delay</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr style="border-bottom: none !important">
+                <td style="border-bottom: none !important;text-align:center">
+                    <small>Preparatory decision signal based on magnitude value</small><br>
+                    <img width="600px" style="margin-top:-30px" src="pics/sub-group_generalization_magnitude-low_averaged_hypothetical_pval-mask.svg">
+                </td>
+                <td style="border-bottom: none !important;text-align:center">
+                    <small>Preparatory decision signal based on probability value</small><br>
+                    <img width="600px"  style="margin-top:-30px" src="pics/sub-group_generalization_probability-low_averaged_hypothetical_pval-mask.svg">
+                </td>
+            </tr>
+        </table>
+        <p class="fragment" style="font-size:30px">
+            Significant clusters during the delay emerge only for hypothetical label
+            based on first option's extreme properties.
+        </p>
+    </section>
+
+    <section>
+        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #888888;margin-top:700px;margin-bottom:0px;margin-left:1050px">
+            <img src="pics/analysis_setup_behavior.svg">
+        </p>
+
+        <table style="border-bottom: none !important">
+            <tr style="border-bottom: none !important">
+                <td style="border-bottom: none !important">
+                    <img style="margin-left:-15px;margin-right:-15px;margin-top:-15px;margin-bottom:-15px" src="pics/average_gains.png">
+                </td>
+                <td style="border-bottom: none !important">
+                    <img style="margin-left:-15px;margin-right:-15px;margin-top:-15px;margin-bottom:-15px" src="pics/gain-simulation-magnitude.png">
+                </td>
+                <td style="border-bottom: none !important">
+                    <img style="margin-left:-15px;margin-right:-15px;margin-top:-15px;margin-bottom:-15px" src="pics/gain-simulation-probability.png">
+                </td>
+            </tr>
+            <tr style="border-bottom: none !important">
+                <td style="border-bottom: none !important">
+                    <img style="margin-left:-15px;margin-right:-15px;margin-top:-15px;margin-bottom:-15px"  src="pics/gain-simulation-ev.png">
+                </td>
+                <td style="border-bottom: none !important">
+                    <img style="margin-left:-15px;margin-right:-15px;margin-top:-15px;margin-bottom:-15px" src="pics/gain-simulation-magnitude-first.png">
+                </td>
+                <td style="border-bottom: none !important">
+                    <img style="margin-left:-15px;margin-right:-15px;margin-top:-15px;margin-bottom:-15px" src="pics/gain-simulation-probability-first.png">
+                </td>
+            </tr>
+        </table>
+    </section>
 
 </section>
 
 <section>
-
     <section>
         <h2>Conclusion</h2>
     </section>
@@ -474,7 +634,7 @@
                 Gosia,
                 Manu <br><br>
                 Yarik + family, JB, <br>
-                Camille, Cass, V, <br>
+                Camille, Remi, V, <br>
                 Ljerka, Daniela
 
             </td>
