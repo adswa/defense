@@ -386,3 +386,7 @@ imgcredit
   position: absolute;
 }
 }
+
+.reveal .slide-number {
+  font-size: 34pt;
+  color: #ffffff; }
