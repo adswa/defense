@@ -82,7 +82,7 @@
 
 <section data-transition="None">
     <h2>Mental representations</h2>
-        <p> <span class="fragment fade-in" data-fragment-index="1"><b>Dynamic </b></span><span>population codes represent working memory content</span></p>
+        <p> <span class="fragment fade-in" data-fragment-index="1"><b>Dynamic </b></span><span>population codes represent working memory content.</span></p>
     <div class="r-stack">
         <img class="fragment fade-out" data-fragment-index="1" src="pics/dynamic_coding_-1.png" width="900px">
         <img class="fragment fade-in-then-out" data-fragment-index="1" src="pics/dynamic_coding_0.png" width="900px">
@@ -106,8 +106,8 @@
 
 <section data-transition="None">
     <h2>Project outline</h2>
-                    <dd>We can model brain activity in an n-dimensional space,
-                    where n is the number of measurements (e.g., voxels/sensors/electrodes).</dd>
+                    <dd>We can model brain activity in an $n$-dimensional space,
+                    where $n$ is the number of measurements (e.g., voxels/sensors/electrodes).</dd>
     <img src="pics/functional_atlas_concept.svg" height="250px">
             <dl>
                 <dt class="fragment fade-in" data-fragment-index="1">Assumption:</dt>
@@ -546,7 +546,9 @@
                         <li>Custom cross-validated temporal decoding pipeline
                             (L2 regularized logistic regression), with
                             3 dimensionality reduction transformers:
-                            <b>SRM</b>, <b>spectral SRM</b>, <b>PCA</b></li>
+                            <span class="fragment highlight-current-red" data-fragment-index="2"><b>SRM</b></span>,
+                            <span class="fragment highlight-current-red" data-fragment-index="3"><b>spectral SRM</b></span>,
+                            <span class="fragment highlight-current-red" data-fragment-index="4"><b>PCA</b></span></li>
                         <li>Hyperparameter tuning (GridSearch on unused trial data)</li>
                     </ul>
                 </td>
