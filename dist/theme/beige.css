@@ -390,3 +390,23 @@ imgcredit
 .reveal .slide-number {
   font-size: 34pt;
   color: #ffffff; }
+
+.reveal .slides section.present p note,
+.reveal .slides section.present note
+{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  font-size: 60%;
+  text-align: left;
+  display: block;
+}
+
+@media print {
+.reveal .slides section.present p note,
+.reveal .slides section.present note {
+  position: absolute;
+  font-size: 40%;
+  text-align: left;
+  display: block;
+}
