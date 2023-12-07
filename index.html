@@ -82,7 +82,7 @@
 
 <section data-transition="None">
     <h2>Mental representations</h2>
-        <p> <span class="fragment fade-in" data-fragment-index="1"><b>Dynamic </b></span><span>population codes represent working memory content.</span></p>
+        <p> <span style="color:red" class="fragment fade-in" data-fragment-index="1"><b>Dynamic </b></span><span>population codes represent working memory content.</span></p>
     <div class="r-stack">
         <img class="fragment fade-out" data-fragment-index="1" src="pics/dynamic_coding_-1.png" width="900px">
         <img class="fragment fade-in-then-out" data-fragment-index="1" src="pics/dynamic_coding_0.png" width="900px">
@@ -115,7 +115,7 @@
                     exact brain activity may differ anatomically, but should
                     correspond to similar cognitive processes.</dd>
                 <dt class="fragment fade-in" data-fragment-index="2">Idea:</dt>
-                <dd class="fragment fade-in" data-fragment-index="2">To functionally align different brain activity,
+                <dd class="fragment fade-in" data-fragment-index="2">To functionally align brain activity,
                     we align the vector representations of the signals.
                 </dd>
                 <dt class="fragment fade-in" data-fragment-index="3">Aim:</dt>
@@ -133,19 +133,26 @@
             <tr>
                 <td style="vertical-align:middle; font-size:35px">
                     <ul>
-                        <li>Acquired 2016/17 at OvGU Magdeburg by Kaiser et al.</li>
+                        <li>Acquired 2016/17 at OvGU <br>
+                            Magdeburg by Kaiser et al.</li>
                         <li>22 participants</li>
-                        <li>510 trials of a delayed decision making task</li>
-                        <li>9 pre-learned magnitude-probability combinations</li>
-                        <li>MEG acquisition on Elekta Neuromag System <br>(306 channels)</li>
+                        <li>510 trials; delayed decision making task</li>
+                        <li>9 pre-learned <b>magnitude</b> (frequency)/ <br>
+                            <b>probability</b> (angle) combinations</li>
+                        <li>MEG acquisition on Elekta Neuromag System (306 channels)</li>
                     </ul>
                 </td>
-                <td>
-                    <img src="pics/memento_experiment.svg">
+                <td><div class="r-stack">
+                    <img class="fragment fade-out" data-fragment-index="0" src="pics/memento_experiment.svg" width="900px">
+                    <video loop controls autoplay muted class="fragment fade-in-then-out" data-fragment-index="0" width="600px" height="370px">
+                        <source src="pics/memento2.mp4"/></video>
+                    <img class="fragment fade-in" data-fragment-index="1" src="pics/memento_experiment.svg" width="900px">
+                </div>
+
                 </td>
             </tr>
         </table>
-    <img height="160px" style="margin-top:0px" src="pics/average_epoch_cleaned.png">
+    <img height="200px" class="fragment fade-in" data-fragment-index="1" style="margin-top:-30px" src="pics/average_epoch_cleaned.png">
     </section>
 
     <section data-transition="None">
@@ -206,7 +213,7 @@
                     <img class="fragment fade-in-then-out" data-fragment-index="3" src="pics/sim_artificial-signal-noisy-3.png" width="550" >
                     <img class="fragment fade-in-then-out" data-fragment-index="4" src="pics/sim_successful_recovery_no_offset.png" width="550px">
                     <img class="fragment fade-in-then-out" data-fragment-index="5" src="pics/sim_successful_weight_recovery_no_offset.png" width="450px">
-                    <img class="fragment fade-in" data-fragment-index="6" src="pics/sim_successful_recovery_no_offset_transformed.png" width="550px">
+                    <img class="fragment fade-in" data-fragment-index="6" src="pics/sim_successful_recovery_no_offset_transformed.png" width="650px">
                 </div>
 
     <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in"  data-fragment-index="4">
@@ -243,9 +250,9 @@
              <img class="fragment fade-in" data-fragment-index="2" src="pics/sim_artificial-signal-offset-2.png" width="500px">
              <img class="fragment fade-in-then-out" data-fragment-index="3" src="pics/sim_unsuccessful_recovery_offset.png" width="550px">
              <img class="fragment fade-in-then-out" data-fragment-index="4" src="pics/sim_unsuccessful_weight_recovery_offset.png" width="500px">
-             <img class="fragment fade-in" data-fragment-index="5" src="pics/sim_unsuccessful_recovery_offset_transformed-0.png" width="580" >
-             <img class="fragment fade-in" data-fragment-index="6" src="pics/sim_unsuccessful_recovery_offset_transformed-2.png" width="580" >
-             <img class="fragment fade-in" data-fragment-index="7" src="pics/sim_unsuccessful_recovery_offset_transformed-3.png" width="580" >
+             <img class="fragment fade-in" data-fragment-index="5" src="pics/sim_unsuccessful_recovery_offset_transformed-0.png" width="600" >
+             <img class="fragment fade-in" data-fragment-index="6" src="pics/sim_unsuccessful_recovery_offset_transformed-2.png" width="600" >
+             <img class="fragment fade-in" data-fragment-index="7" src="pics/sim_unsuccessful_recovery_offset_transformed-3.png" width="600" >
         </div>
         <p style="font-size:30px;margin-top:-15px;" class="fragment fade-in"  data-fragment-index="3">
         ...the signal recovery is impeded: <br>
@@ -268,8 +275,8 @@
     <section data-transition="None">
         <h2>A spectral variant of the SRM</h2>
         <p style="font-size:35px">
-            Transforming data into a <strong>power spectrum</strong>
-            prior to SRM removes timing offsets.</p>
+            Do not use MEG time courses to train the model,
+            but their spectral transformation.</p>
         <p style="font-size:35px;margin-top:-15px;" class="fragment fade-in"  data-fragment-index="2">
             Subject bases can then transform unseen time-resolved data <br>
             into a <b>time-resolved shared space</b>.
@@ -369,17 +376,17 @@
             <td class="fragment" data-fragment-index="1" style="font-size:30px;text-align:left">
                 "The goal of Research Objects is to<br>
                 create a class of artefacts that can<br>
-                encapsulate our digital knowledge<br>
-                and provide a mechanism for sharing<br>
-                and discovering assets of reuseable <br>
+                <b>encapsulate our digital knowledge</b><br>
+                and provide a mechanism for <b>sharing</b><br>
+                and <b>discovering</b> assets of <b>reusable</b> <br>
                 research and scientific knowledge."
             </td>
             <td class="fragment" data-fragment-index="3" style="vertical-align:middle; text-align:center">
                 <img src="pics/dataset.svg" height="150px">
             </td>
             <td style="font-size:30px;text-align:right" class="fragment" data-fragment-index="2">
-                "A stable actionable unit that <br>
-                bundles sufficient information<br>
+                "A stable <b>actionable unit</b> that <br>
+                bundles <b>sufficient information</b><br>
                 to allow reliable interpretation <br>
                 and processing of contained data.<br>
                 PIDs and metadata of FDOs are <br>
@@ -469,56 +476,72 @@
 
 <section>
     <section data-transition="None">
-        <img src="pics/analysis_setup.png">
-    </section>
-
-    <section data-transition="None">
-        <h2>Behavioral Analyses</h2>
-        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #888888;margin-top:635px;margin-bottom:0px;margin-left:1050px">
-            <img src="pics/analysis_setup_behavior.svg">
-        </p>
-        <p style="font-size:35px"><span data-fragment-index="1" class="fragment highlight-current-red">Better-than-chance performance</span>;
-            <span class="fragment highlight-current-red" data-fragment-index="2">Consecutive
-            evaluation starting with either of the stimulus properties aligns
-                best with participants' actual performance</span>.</p>
-        <table style="border-bottom: none !important; font-size:20px">
-            <tr style="border-bottom: none !important">
-                <td style="border-bottom: none !important; text-align:center" data-fragment-index="1" class="fragment highlight-current-red">
-                    Random choice
-                    <img height="190px" style="margin-top:5px;margin-left:-15px;margin-right:-15px;margin-top;margin-bottom:-0px" src="pics/average_gains.png">
+        <table>
+            <tr>
+                <td style="vertical-align:top">
+                    <b>Project overview</b>
+                    <img width="700px"  src="pics/analysis_setup.png">
                 </td>
-                <td style="border-bottom: none !important;text-align:center">
-                    Magnitude-based
-                    <img  height="190px" style="margin-top:5px;margin-left:-15px;margin-right:-15px;margin-bottom:-0px" src="pics/gain-simulation-magnitude.png">
-                </td>
-                <td style="border-bottom: none !important;text-align:center">
-                    Probability-based
-                    <img  height="190px" style="margin-top:5px;margin-left:-15px;margin-right:-15px;margin-bottom:-0px" src="pics/gain-simulation-probability.png">
-                </td>
-            </tr>
-            <tr style="border-bottom: none !important">
-                <td style="border-bottom: none !important;text-align:center">
-                    Expected-Value-based
-                    <img height="190px" style="margin-top:5px;margin-left:-15px;margin-right:-15px;margin-bottom:-15px"  src="pics/gain-simulation-ev.png">
-                </td>
-                <td style="border-bottom: none !important;text-align:center" data-fragment-index="2" class="fragment highlight-current-red">
-                    Magnitude-then-probability-based
-                    <img height="190px" style="margin-top:5px;margin-left:-15px;margin-right:-15px;margin-bottom:-15px" src="pics/gain-simulation-magnitude-first.png">
-                </td>
-                <td style="border-bottom: none !important;text-align:center" data-fragment-index="2" class="fragment highlight-current-red">
-                    Probability-then-magnitude-based
-                    <img height="190px" style="margin-top:5px;margin-left:-15px;margin-right:-15px;margin-bottom:-15px" src="pics/gain-simulation-probability-first.png">
+                <td style="vertical-align:top">
+                    <b>Trial overview</b>
+                    <img  width="500px"  src="pics/memento_experiment.svg">
                 </td>
             </tr>
         </table>
-                <p style="font-size:25px;text-align:left">Top row: Participants actual performance; Bottom row: Simulated strategy<br>
-                    <small>(last two panels have no random element and yield single, fixed value).</small></p>
+        </section>
 
+    <section data-transition="None">
+        <h2>Simulating possible decision strategies</h2>
+        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #ff0000;margin-top:635px;margin-bottom:0px;margin-left:1050px">
+            <img src="pics/analysis_setup_behavior.svg">
+        </p>
+        <p class="fragment fade-in" data-fragment-index="0" style="font-size:35px"><span data-fragment-index="1" class="fragment highlight-current-red">Better-than-chance performance</span>;
+            <span class="fragment highlight-current-red" data-fragment-index="2">Consecutive
+            evaluation starting with either of the stimulus properties aligns
+                best with participants' actual performance</span>.</p>
+
+        <div class="r-stack">
+
+            <img height="500" class="fragment fade-out" data-fragment-index="0" src="pics/random-choice.svg">
+
+        <table class="fragment" data-fragment-index="0" style="border-bottom: none !important; font-size:20px">
+            <tr style="border-bottom: none !important">
+                <td style="border-bottom: none !important; text-align:center" data-fragment-index="1" class="fragment highlight-current-red">
+                    Random choice
+                    <img height="250px"  style="margin-top:-50px;margin-left:-50px;margin-right:-50px;margin-bottom:-50px" src="pics/random-choice.svg">
+                </td>
+                <td style="border-bottom: none !important;text-align:center">
+                    Magnitude-based
+                    <img  height="250px" style="margin-top:-50px;margin-left:-50px;margin-right:-50px;margin-bottom:-50px" src="pics/gain-simulation-magnitude.svg">
+                </td>
+                <td style="border-bottom: none !important;text-align:center">
+                    Probability-based
+                    <img  height="250px" style="margin-top:-50px;margin-left:-50px;margin-right:-50px;margin-bottom:-50px" src="pics/gain-simulation-probability.svg">
+                </td>
+            </tr>
+            <tr style="border-bottom: none !important" >
+                <td style="border-bottom: none !important;text-align:center" data-fragment-index="3" class="fragment highlight-current-red">
+                    Expected-Value-based
+                    <img height="250px" style="margin-top:-50px;margin-left:-50px;margin-right:-50px;margin-bottom:-50px" data-fragment-index="2" class="fragment highlight-current-red" src="pics/gain-simulation-ev.svg">
+                </td>
+                <td style="border-bottom: none !important;text-align:center" data-fragment-index="2" class="fragment highlight-current-red">
+                    Mag.-then-Prob.-based
+                    <img height="250px" style="margin-top:-50px;margin-left:-50px;margin-right:-50px;margin-bottom:-50px" src="pics/gain-simulation-magnitude-first.svg">
+                </td>
+                <td style="border-bottom: none !important;text-align:center" data-fragment-index="2" class="fragment highlight-current-red">
+                    Prob.-then-Mag.-based
+                    <img height="250px" style="margin-top:-50px;margin-left:-50px;margin-right:-50px;margin-bottom:-50px" src="pics/gain-simulation-probability-first.svg">
+                </td>
+            </tr>
+        </table>
+        </div>
+        <p style="font-size:25px;text-align:left">Top row: Participants actual performance; Bottom row: Simulated strategy<br>
+                    <small class="fragment fade-in" data-fragment-index="0">(last two panels have no random element and yield single, fixed value).</small></p>
     </section>
 
     <section data-transition="None">
         <h2>Latent components capture some features</h2>
-        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #888888;margin-top:700px;margin-bottom:0px;margin-left:1050px">
+        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #ff0000;margin-top:700px;margin-bottom:0px;margin-left:1050px">
         <img src="pics/analysis_setup_srm.svg">
         </p>
         <p class="fragment fade-in-then-semi-out" data-fragment-index="1" style="font-size:30px">The shared space contains information about some trial properties, <br>
@@ -538,7 +561,7 @@
 
     <section data-transition="None">
         <h2>representations fade in the delay</h2>
-        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #888888;margin-top:680px;margin-bottom:0px;margin-left:1050px">
+        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #ff0000;margin-top:680px;margin-bottom:0px;margin-left:1050px">
         <img src="pics/analysis_setup_decoding.svg">
         </p>
         <table>
@@ -547,13 +570,12 @@
                     <ul>
                         <b>Temporal decoding of stimulus
                         properties in the delay:</b>
-                        <li>Custom cross-validated temporal decoding pipeline
-                            (L2 regularized logistic regression), with
-                            3 dimensionality reduction transformers:
+                        <li>Custom temporal decoding pipelines,
+                            3 with dimensionality reduction transformers:<br>
                             <span class="fragment highlight-current-red" data-fragment-index="2"><b>SRM</b></span>,
                             <span class="fragment highlight-current-red" data-fragment-index="3"><b>spectral SRM</b></span>,
                             <span class="fragment highlight-current-red" data-fragment-index="4"><b>PCA</b></span></li>
-                        <li>Hyperparameter tuning (GridSearch on unused trial data)</li>
+                        <li>Hyperparameter tuning (GridSearch)</li>
                     </ul>
                 </td>
                 <td style="vertical-align:bottom">
@@ -566,22 +588,22 @@
                 </td>
             </tr>
         </table>
-        <table class="fragment" data-fragment-index="5">
+        <table>
             <tr style="border-bottom: none !important">
-                <td style="text-align:center;vertical-align:top">
+                <td  class="fragment" data-fragment-index="5"style="text-align:center;vertical-align:top">
                     <small>Decoding reward probability of option 1</small>
                     <div class="r-stack">
 
-                        <img height="350px" src="pics/averaged-decoding_balanced-accuracy_l2logreg_probability_dimreduction-None.png">
+                        <img width="800px" height="400px" src="pics/averaged-decoding_balanced-accuracy_l2logreg_probability_dimreduction-None.png">
                     </div>
                 </td>
                 <td style="font-size:30px">
-                    <ul>
-                        <li>Plain temporal decoding, & decoding <br>
-                            with dimensionality reduction <br>
-                            methods find
-                            <b>no stable decoding in the delay</b>.
-                        </li>
+                    <ul class="fragment fade-in" data-fragment-index="6">
+                        <b>No stable decoding</b><br>
+                        of stimulus properties <br>
+                        in the delay across <br>
+                        pipelines.
+
                     </ul>
                 </td>
             </tr>
@@ -590,7 +612,7 @@
 
     <section data-transition="None">
         <h2>Preparatory decision signals in the delay?</h2>
-        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #888888;margin-top:650px;margin-bottom:0px;margin-left:1050px">
+        <p style="z-index: 100;position: fixed;background-color:#f4f0e8;box-shadow: 1px 1px 8px #ff0000;margin-top:650px;margin-bottom:0px;margin-left:1050px">
         <img src="pics/analysis_setup_generalization.svg">
         </p>
         <table style="border-bottom: none !important;table-layout:fixed" width="1400px">
@@ -598,41 +620,42 @@
                 <td style="border-bottom: none !important;font-size:30px;vertical-align:top">
                     <ul>
                     <b>Temporal generalization analysis</b>
-                        <li>Assess temporal generalization of decision<br>
-                            representations based on trial characteristics.
+                        <li>Assess temporal generalization of <br>
+                            preparatory decision representations <br>
+                            based on trial characteristics in <br>
+                            the delay.
                         </li>
-                        <li>Permutation test (N=10000) to find above <br>
-                            chance decoding accuracy.</li>
-                        <li>Within subject analyses, aggregated to group level.<br>
-                            </li>
-
+                    <br>
                     </ul>
                 </td>
                 <td style="border-bottom: none !important;font-size:30px;vertical-align:top">
                     <ul>
                         <li><b>Training</b>: Response-centered data. Labels<br>
-                            according to 1) actual choice, 2) choice derived<br>
-                            from first option's properties, 3) choice derived<br>
+                            according to 1) actual choice, <b>2) choice derived<br>
+                            from first option's properties </b>, 3) choice derived<br>
                             according to subject-specific property weights.<br>
                         </li>
-                        <li><b>Testing</b>: Data during stimulus presentation and delay.</li>
+                        <li><b>Testing</b>: Stimulus presentation and delay.</li>
+                        <br>
                     </ul>
                 </td>
             </tr>
-            <tr style="border-bottom: none !important">
-                <td style="border-bottom: none !important;text-align:center">
-                    <small>Preparatory decision signal based on magnitude value</small><br>
+            <tr class="fragment fade-in" style="border-bottom: none !important">
+                <td style="border-bottom: none !important;text-align:left">
+                    <p style="text-align:center;margin-bottom:-50px"><small>Preparatory decision (magnitude)</small></p><br>
                     <img width="600px" style="margin-top:-15px" src="pics/sub-group_generalization_magnitude-low_averaged_hypothetical_pval-mask.svg">
+                    <p style="text-align:left; font-size:18pt;margin-top:-40px" ><small>Chance level: 50%</small></p>
                 </td>
-                <td style="border-bottom: none !important;text-align:center">
-                    <small>Preparatory decision signal based on probability value</small><br>
+                <td style="border-bottom: none !important;text-align:left">
+                    <p style="text-align:center;margin-bottom:-50px"><small>Preparatory decision (probability)</small></p><br>
                     <img width="600px"  style="margin-top:-15px" src="pics/sub-group_generalization_probability-low_averaged_hypothetical_pval-mask.svg">
+                    <p style="text-align:left; font-size:18pt;margin-top:-40px" ><small>Chance level: 50%</small></p>
                 </td>
             </tr>
         </table>
         <p class="fragment" style="font-size:30px">
-            <b>Significant clusters in the delay emerge for presumed<br>
-                 decision preparation from 1st option's extreme properties.</b>
+            <b>The delay period might contain a representation <br>
+                of a decision-related signal.</b>
         </p>
     </section>
 </section>
