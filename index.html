@@ -662,22 +662,40 @@
 
 <section>
     <section data-transition="None">
-        <h2>Contributions: Results</h2>
-        <dl>
-            <dt>In a delayed decision making MEG study of 22 healthy participants, we find...</dt>
-            <li>no stable representation of stimulus properties during the delay in whole-scalp data</li>
-            <li>initial evidence of a preparatory decision signal</li>
-        </dl>
-    </section>
-
-    <section data-transition="None">
-        <h2>Contributions: Research Outcomes </h2>
-        <dl>
-            <li>Transformed Kaiser et al.'s data into a FAIRer digital research object</li>
-            <li>Demonstrated feasibility of SRM and spectral SRM on MEG data</li>
-            <li>A domain agnostic educational resource and computational framework for large-scale
+        <h2>Contributions</h2>
+        <table>
+            <tr>
+                <td style="vertical-align:top">
+                    <dl class="fragment fade-in">
+                        <dd><b>"What"</b> is represented?</dd>
+                        <li>Stimulus features</li>
+                        <li>Initial evidence of a preparatory <br>
+                            decision signal. <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003225&type=printable" target="_blank">Hunt et al., 2013</a>:
+                            "Evaluation in action-related <br>
+                            spaces" during sequential stimulus presentation</li>
+                    </dl>
+                    <dl class="fragment fade-in">
+                        <br>
+                        <dd><b>"How"</b> is it represented?</dd>
+                        <li>Non-stable representation of<br> stimulus
+                            properties.<br>
+                        <a href="https://www.cell.com/fulltext/S1364-6613(15)00102-3" target="_blank">Stokes, 2015</a>: Activity-silent working memory;<br>
+                        <a href="https://www.pnas.org/doi/full/10.1073/pnas.1820730116" target="_blank">Trübutschek et al., 2015</a>: <br>
+                            Activity-silent non-conscious working memory</li>
+                    </dl>
+                </td>
+                <td>
+                    <dl>
+                        <dd class="fragment fade-in"><b>Reusable research outcomes</b></dd>
+            <li class="fragment fade-in">Transformed Kaiser et al.'s data into a FAIRer digital research object</li>
+            <li class="fragment fade-in">Demonstrated feasibility of SRM and spectral SRM on MEG data</li>
+            <li class="fragment fade-in">Domain agnostic educational resource on research data management</li>
+            <li class="fragment fade-in">Computational framework for large-scale
                 processing</li>
         </dl>
+                </td>
+            </tr>
+        </table>
     </section>
 
 <section>
@@ -740,39 +758,70 @@ Free and open source software, and the people behind it<br>
 <!--------- ----------->
 <section>
     <section>
+        <h2>Additional slides</h2>
+    </section>
+    <section>
         <h2>Experimental Stimuli</h2>
-        <img height="900px" src="pics/memento-stimuli.png">
+        <div class="r-stack">
+            <img class="fragment fade-out" data-fragment-index="0" height="900px" src="pics/memento-stimuli.png">
+            <img class="fragment fade-in" data-fragment-index="0" height="900px" src="pics/memento_tutorial.svg">
+        </div>
+    </section>
+
+    <section>
+        <h2>Modeling property importance</h2>
+        <img src="pics/average_property_importance.png" height="800px">
+    </section>
+
+    <section>
+        <h2>Preprocessing</h2>
+        <img src="pics/preprocessing_overview.svg">
+    </section>
+
+    <section>
+        <h2>Reaction times</h2>
+        <img src="pics/average_reaction_times.png" height="250px">
+        <img src="pics/memento_aggregate_reaction_times_nobrainer.png" height="500px">
+    </section>
+
+    <section data-transition="None">
+        <h2>Temporal decoding</h2>
+        <img src="pics/decoding_eval.png">
+    </section>
+    <section data-transition="None">
+        <h2>Temporal decoding</h2>
+        <img src="pics/sliding_window.png">
+    </section>
+    <section data-transition="None">
+        <h2>Temporal decoding</h2>
+        <img src="pics/spatiotemporal_sliding_window.png">
+    </section>
+    <section data-transition="None">
+        <h2>Temporal decoding</h2>
+        <div class="r-stack">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_100-200ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_200-300ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_300-400ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_400-500ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_500-600ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_600-700ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_700-800ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_800-900ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_900-1000ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_1000-1100ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_1100-1200ms.png">
+            <img class="fragment" src="pics/sub-all_conf-matrix_probability_dimreduction-None_1200-1300ms.png">
+
+        </div>
+    </section>
+
+    <section>
+        <h2>RDM</h2>
+        <img src="pics/gitlog_tempgen.png">
     </section>
 </section>
 
 
-<section>
-        <table style="font-size:35px"  align="center">
-        <tr style="border-bottom: none !important">
-            <td>
-            <div class="r-stack">
-            <img class="fragment" data-fragment-index="1" src="pics/stimulus1.png" >
-            <img class="fragment" data-fragment-index="2" src="pics/stimulus2.png" >
-            <img class="fragment" data-fragment-index="3" src="pics/stimulus3.png" >
-            <img class="fragment" data-fragment-index="4" src="pics/stimulus4.png" >
-            <img class="fragment" data-fragment-index="5" src="pics/stimulus5.png" >
-            </div>
-            </td>
-            <td style="vertical-align:middle">
-                <div class="r-stack">
-            <p class="fragment fade-in-then-out" data-fragment-index="1">Fixation cross</p>
-            <p class="fragment fade-in-then-out" data-fragment-index="2">First option (0.7s)<br><br>
-                <small>number of stripes: reward <strong>magnitude</strong> <br>
-                    angle of stripes: reward <strong>probability</strong></small></p>
-            <p class="fragment fade-in-then-out" data-fragment-index="3">Delay (2s)</p>
-            <p class="fragment fade-in-then-out" data-fragment-index="4">Second option (0.7s)</p>
-            <p class="fragment fade-in-then-out" data-fragment-index="5">Decision and Feedback<br><br>
-                <small>left or right button press</small></p>
-                </div>
-            </td>
-        </tr>
-    </table>
-</section>
 
 			</div>
 		</div>
